@@ -1,30 +1,40 @@
 import React from "react";
-import "./CSS/home.css";
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
-import Image from 'react-bootstrap/Image';
-
-
+import "./CSS/home.scss";
+// import { ReactComponent as Ubank } from "../../assets/ubank.svg";
+import Ubank from "../../assets/JSX/Ubank.jsx";
+import GitHub from "../../assets/JSX/GitHub.jsx";
+import Google from "../../assets/google.png";
 
 export default function Home() {
-  
   return (
-    <Container id="contehome1">
-      <Image id="henrybankhome" src="https://fotos.subefotos.com/f807c25bc9510155673fc2acf1d82a39o.png" ></Image>
-      <div className="contehome2">
-        <div className="logconthome">
-        <Button className="loginbuttonhome" href="/login" variant="primary"  type="button" >
-          Iniciar Sesión
-        </Button>
-        </div>
-        <div className="regconthome">
-        <Button className="registerbuttonhome"  href="/registrarse" variant="primary" type="button" >
-            Registrarse
-        </Button> 
-          <a id="ayudahome" href="/">¿Necesitas ayuda?</a>
-        </div>
+    <div id="home" className="d-flex position-absolute m-0 p-0 h-100 w-100">
+      <div className="d-flex position-relative logo">
+        <Ubank color="#ffffff" size="350"/>
       </div>
-      <Image id="footerhome" src="https://fotos.subefotos.com/0d5c65b0be7d80bce6ee2187e71c9997o.png" ></Image>
-    </Container>
+      <div className="d-flex content">
+        <div className="d-flex flex-direction-row justify-content-between">
+          <Ubank size="40" />
+          <a href="/login">Iniciar sesión</a>
+        </div>
+        <div>
+          <p className="title">Tu banco <br/> Una app</p>
+          <p className="subtitle">Únete a Ubank y empieza a generar <br/> ingresos desde tu hogar</p>
+        </div>
+        <div className="d-flex flex-column btn-group">
+          <button className="filled">Registrarse con email</button>
+          <span>o</span>
+          <button className="outlined">
+            <div className="google">
+              <img src={Google}/>
+              <span>Registrarse con Google</span>
+            </div>
+          </button>
+          <button className="outlined">
+            <GitHub size="24" color="#fafafa" />
+            <span>Registrarse con GitHub</span>
+          </button>
+        </div>
+      </div>           
+    </div>
   );
 }
